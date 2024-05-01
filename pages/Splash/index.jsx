@@ -1,7 +1,14 @@
 import { StyleSheet, Text, View } from "react-native";
 import { Logo } from "../../assets/illustration";
+import { useEffect } from "react";
 
-export default function Splash() {
+export default function Splash({ navigation }) {
+  useEffect(() => {
+    setTimeout(() => {
+      navigation.replace('GetStarted')
+    }, 3000)
+  }, [navigation])
+
   return (
     <View style={styles.container}>
       <Logo />
