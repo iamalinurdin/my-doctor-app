@@ -2,6 +2,7 @@ import { ImageBackground, StyleSheet, Text, View } from "react-native";
 import { ILGetStarted, Logo } from "../../assets/illustration";
 import { Button, Gap } from "../../components";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { colors } from "../../utils/colors";
 
 export default function GetStarted({ navigation }) {
   return (
@@ -30,7 +31,7 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 28,
     fontWeight: '600',
-    color: '#FFF',
+    color: colors.white,
     marginTop: 91,
     // fontFamily: 'Nunito-SemiBold'
   },

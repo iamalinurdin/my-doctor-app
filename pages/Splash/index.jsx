@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View } from "react-native";
 import { Logo } from "../../assets/illustration";
 import { useEffect } from "react";
+import { colors } from "../../utils/colors";
 
 export default function Splash({ navigation }) {
   useEffect(() => {
@@ -22,14 +23,14 @@ export default function Splash({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFF',
+    backgroundColor: colors.white,
     alignItems: 'center',
     justifyContent: 'center',
   },
   greetingText: {
     fontSize: 20,
     fontWeight: '600',
-    color: '#112340',
+    color: colors.text.primary,
     marginTop: 20
   }
 });

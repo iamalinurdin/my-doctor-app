@@ -2,10 +2,10 @@ import { SafeAreaView, StyleSheet, View } from "react-native";
 import { Button, Gap, Header, Input } from "../../components";
 import { colors } from "../../utils/colors";
 
-export default function Register() {
+export default function Register({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
-      <Header />
+      <Header handleOnPress={() => navigation.goBack()} title="Daftar Akun" />
       <View style={styles.content}>
         <Input label="Full Name" />
         <Gap height={24} />
