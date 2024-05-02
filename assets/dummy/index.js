@@ -5,6 +5,9 @@ import DummyNews1 from './news-1.png'
 import DummyNews2 from './news-2.png'
 import DummyNews3 from './news-3.png'
 import DummyUser from './user.png'
+import DummyHospital1 from './hospital-1.png'
+import DummyHospital2 from './hospital-2.png'
+import DummyHospital3 from './hospital-3.png'
 
 export {
   DummyDoctor1,
@@ -14,4 +17,7 @@ export {
   DummyNews2,
   DummyNews3,
   DummyUser,
+  DummyHospital1,
+  DummyHospital2,
+  DummyHospital3,
 }
