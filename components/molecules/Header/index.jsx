@@ -3,29 +3,31 @@ import { IconBackDark } from "../../../assets/icon";
 import { Button, Gap } from "../../atoms";
 import { colors } from "../../../utils/colors";
 
-export default function Header({ handleOnPress, title }) {
+export default function Header({ handleOnPress, title, type }) {
   return (
-    <View style={styles.container}>
+    <View style={styles.container(type)}>
       <Button type="icon-only" icon="back-dark" handleOnPress={handleOnPress} />
-      <Text style={styles.text}>{title}</Text>
+      <Text style={styles.text(type)}>{title}</Text>
       <Gap width={24} />
     </View>
   )
 }
 
 const styles = StyleSheet.create({
-  container: {
+  container: (type) => ({
     paddingHorizontal: 16,
     paddingVertical: 30,
-    backgroundColor: colors.white,
+    backgroundColor: type == 'dark' ? colors.secondary : colors.white,
     flexDirection: 'row',
-    alignItems: 'center'
-  },
-  text: {
+    alignItems: 'center',
+    borderBottomLeftRadius: type == 'dark' ? 20 : 0,
+    borderBottomRightRadius: type == 'dark' ? 20 : 0,
+  }),
+  text: (type) => ({
     flex: 1,
     textAlign: 'center',
     fontSize: 20,
     fontWeight: '600',
-    color: colors.text.primary
-  }
+    color: type == 'dark' ? colors.white : colors.text.primary
+  })
 })

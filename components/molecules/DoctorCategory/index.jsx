@@ -1,14 +1,14 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { IllustrationHeart } from "../../../assets/illustration";
 import { colors } from "../../../utils/colors";
 
-const DoctorCategory = () => {
+const DoctorCategory = ({ handleOnPress }) => {
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={handleOnPress}>
       <IllustrationHeart style={styles.illustration} />
       <Text style={styles.label}>Saya butuh</Text>
       <Text style={styles.category}>dokter umum</Text>
-    </View>
+    </TouchableOpacity>
   );
 }
 

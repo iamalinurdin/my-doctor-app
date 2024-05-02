@@ -1,4 +1,5 @@
 import IconBackDark from './ic-back-dark.svg'
+import IconBackLight from './ic-back-light.svg'
 import IconAddPhoto from './ic-add-photo.svg'
 import IconRemovePhoto from './ic-remove-photo.svg'
 import IconDoctorActive from './ic-doctor-active.svg'
@@ -8,6 +9,7 @@ import IconMessageDeactive from './ic-message-deactive.svg'
 import IconHospitalActive from './ic-hospital-active.svg'
 import IconHospitalDeactive from './ic-hospital-deactive.svg'
 import IconStar from './ic-star.svg'
+import IconChevronRight from './ic-chevron-right.svg'
 
 export {
   IconBackDark,
@@ -20,4 +22,6 @@ export {
   IconHospitalActive,
   IconHospitalDeactive,
   IconStar,
+  IconChevronRight,
+  IconBackLight,
 }

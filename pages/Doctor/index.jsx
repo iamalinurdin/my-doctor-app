@@ -2,7 +2,7 @@ import { SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
 import { DoctorCategory, Gap, HomeProfile, NewsItem, RatedDoctor } from "../../components";
 import { colors } from "../../utils/colors";
 
-export default function Doctor() {
+export default function Doctor({ navigation }) {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: colors.secondary }}>
       <View style={styles.container}>
@@ -16,7 +16,7 @@ export default function Doctor() {
             <ScrollView horizontal showsHorizontalScrollIndicator={false}>
               <View style={styles.category}>
                 <Gap width={32} />
-                <DoctorCategory />
+                <DoctorCategory handleOnPress={() => navigation.navigate('ChooseDoctor')} />
                 <DoctorCategory />
                 <DoctorCategory />
                 <DoctorCategory />
