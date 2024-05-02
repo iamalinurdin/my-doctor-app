@@ -3,7 +3,7 @@ import { Logo } from "../../assets/illustration";
 import { Button, Gap, Input, Link } from "../../components";
 import { colors } from "../../utils/colors";
 
-export default function Login() {
+export default function Login({ navigation }) {
   return (
     <SafeAreaView style={{
       flex: 1,
@@ -18,7 +18,7 @@ export default function Login() {
         <Gap height={10} />
         <Link title="Forgot Password?" align="start" />
         <Gap height={40} />
-        <Button title="Sign In" />
+        <Button title="Sign In" handleOnPress={() => navigation.replace('MainApp')} />
         <Gap height={30} />
         <Link title="Create Account" size={16} />
       </View>
