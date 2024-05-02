@@ -1,10 +1,10 @@
-import { StyleSheet, Text, View } from "react-native";
+import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import { Logo } from "../../assets/illustration";
 import { Button, Gap, Input, Link } from "../../components";
 
 export default function Login() {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Logo />
       <Text style={styles.title}>Masuk dan mulai berkonsultasi</Text>
       <Input label="Email Address" />
@@ -16,7 +16,7 @@ export default function Login() {
       <Button title="Sign In" />
       <Gap height={30} />
       <Link title="Create Account" size={16} />
-    </View>
+    </SafeAreaView>
   )
 }
 

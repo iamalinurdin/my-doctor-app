@@ -1,4 +1,5 @@
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
+import { colors } from "../../../utils/colors";
 
 export default function Button({ type = 'primary', title, handleOnPress }) {
   return (
@@ -10,7 +11,7 @@ export default function Button({ type = 'primary', title, handleOnPress }) {
 
 const styles = StyleSheet.create({
   container: (type) => ({
-    backgroundColor: type == 'primary' ? '#0BCAD4' : '#FFF',
+    backgroundColor: type == 'primary' ? colors.button.primary.background : colors.button.secondary.background,
     paddingVertical: 10,
     borderRadius: 10
   }),
@@ -18,6 +19,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '600',
     textAlign: 'center',
-    color: type == 'primary' ? '#FFF' : '#000'
+    color: type == 'primary' ? colors.button.primary.text : colors.button.secondary.text
   })
 })
