@@ -3,10 +3,10 @@ import { colors } from "../../../utils/colors";
 import { Button } from "../../atoms";
 import { DummyDoctor1 } from "../../../assets/dummy";
 
-const DarkProfile = () => {
+const DarkProfile = ({ handleOnPress }) => {
   return (
     <View style={styles.container}>
-      <Button type="icon-only" icon="back-dark" />
+      <Button type="icon-only" icon="back-dark" handleOnPress={handleOnPress} />
       <View style={styles.profile}>
         <Text style={styles.name}>Doctor Name</Text>
         <Text style={styles.category}>Category</Text>

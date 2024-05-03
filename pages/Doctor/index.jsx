@@ -26,7 +26,7 @@ export default function Doctor({ navigation }) {
           </View>
           <View style={styles.wrapperContent}>
             <Text style={styles.sectionLabel}>Top Rated Doctor</Text>
-            <RatedDoctor />
+            <RatedDoctor handleOnPress={() => navigation.navigate('DoctorProfile')} />
             <RatedDoctor />
             <RatedDoctor />
           </View>

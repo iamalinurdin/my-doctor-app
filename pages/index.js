@@ -9,6 +9,7 @@ import ChooseDoctor from "./ChooseDoctor";
 import Chat from "./Chat";
 import HomeProfile from "./HomeProfile";
 import UpdateProfile from "./UpdateProfile";
+import DoctorProfile from "./DoctorProfile";
 
 export {
   Splash,
@@ -21,5 +22,6 @@ export {
   ChooseDoctor,
   Chat,
   HomeProfile,
-  UpdateProfile
+  UpdateProfile,
+  DoctorProfile,
 }
