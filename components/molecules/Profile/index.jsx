@@ -1,12 +1,14 @@
 import { Image, StyleSheet, Text, View } from "react-native";
 import { DummyDoctor1 } from "../../../assets/dummy";
 import { colors } from "../../../utils/colors";
+import { IconRemovePhoto } from "../../../assets/icon";
 
 const Profile = () => {
   return (
     <View style={styles.container}>
       <View style={styles.frame}>
         <Image source={DummyDoctor1} style={styles.avatar} />
+        <IconRemovePhoto style={styles.icon} />
       </View>
       <Text style={styles.name}>Jane Doe</Text>
       <Text style={styles.description}>Mobile Developer</Text>
@@ -45,6 +47,11 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     color: colors.text.secondary,
     marginTop: 2
+  },
+  icon: {
+    position: 'absolute',
+    bottom: 8,
+    right: 8
   }
 })
 

@@ -1,5 +1,5 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { GetStarted, Splash, Register, Login, Doctor, Messages, Hospitals, ChooseDoctor, Chat, HomeProfile } from '../pages';
+import { GetStarted, Splash, Register, Login, Doctor, Messages, Hospitals, ChooseDoctor, Chat, HomeProfile, UpdateProfile } from '../pages';
 import UploadPhoto from '../pages/UploadPhoto';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { BottomNavigator } from '../components';
@@ -66,6 +66,11 @@ const Router = () => {
       <Stack.Screen
         name="HomeProfile"
         component={HomeProfile}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="UpdateProfile"
+        component={UpdateProfile}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>
