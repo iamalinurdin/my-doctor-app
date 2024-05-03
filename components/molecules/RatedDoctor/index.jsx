@@ -3,13 +3,13 @@ import { DummyDoctor1 } from "../../../assets/dummy";
 import { IconStar } from "../../../assets/icon";
 import { colors } from "../../../utils/colors";
 
-const RatedDoctor = ({ handleOnPress }) => {
+const RatedDoctor = ({ handleOnPress, name, position, image }) => {
   return (
     <TouchableOpacity style={styles.container} onPress={handleOnPress}>
-      <Image style={styles.avatar} source={DummyDoctor1} />
+      <Image style={styles.avatar} source={image} />
       <View style={styles.profile}>
-        <Text style={styles.name}>Doctor Name</Text>
-        <Text style={styles.category}>Category</Text>
+        <Text style={styles.name}>{name}</Text>
+        <Text style={styles.category}>{position}</Text>
       </View>
       <View style={styles.rating}>
         <IconStar />

@@ -1,6 +1,7 @@
 import { SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
 import { Button, Gap, Header, Input, Profile } from "../../components";
 import { colors } from "../../utils/colors";
+import { DummyDoctor8 } from "../../assets/dummy";
 
 const UpdateProfile = ({ navigation }) => {
   return (
@@ -11,7 +12,7 @@ const UpdateProfile = ({ navigation }) => {
       <Header title="Edit Profile" handleOnPress={() => navigation.goBack()} />
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.content}>
-          <Profile />
+          <Profile name="Jane Doe" description="Product Designer" image={DummyDoctor8} isRemovePhoto />
           <Gap height={2} />
           <Input label="Nama Lengkap" />
           <Input label="Pekerjaan" />

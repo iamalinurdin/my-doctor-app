@@ -1,6 +1,7 @@
 import { SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
 import { DoctorCategory, Gap, HomeProfile, NewsItem, RatedDoctor } from "../../components";
 import { colors } from "../../utils/colors";
+import { DummyDoctor1, doctors } from "../../assets/dummy";
 
 export default function Doctor({ navigation }) {
   return (
@@ -9,7 +10,12 @@ export default function Doctor({ navigation }) {
         <ScrollView showsVerticalScrollIndicator={false}>
           <View style={styles.wrapperContent}>
             <Gap height={30} />
-            <HomeProfile handleOnPress={() => navigation.navigate('HomeProfile')} />
+            <HomeProfile
+              name="Jane Doe"
+              description="Product Designer"
+              image={DummyDoctor1}
+              handleOnPress={() => navigation.navigate('HomeProfile')}
+            />
             <Text style={styles.sectionLabel}>Mau konsultasi dengan siapa hari ini?</Text>
           </View>
           <View style={{ marginHorizontal: -16 }}>
@@ -26,9 +32,15 @@ export default function Doctor({ navigation }) {
           </View>
           <View style={styles.wrapperContent}>
             <Text style={styles.sectionLabel}>Top Rated Doctor</Text>
-            <RatedDoctor handleOnPress={() => navigation.navigate('DoctorProfile')} />
-            <RatedDoctor />
-            <RatedDoctor />
+            {doctors.map((item, index) => (
+              <RatedDoctor
+                handleOnPress={() => navigation.navigate('DoctorProfile')}
+                key={index}
+                name={item.name}
+                position={item.category}
+                image={item.image}
+              />
+            ))}
           </View>
           <View style={styles.wrapperContent}>
             <Text style={styles.sectionLabel}>Good News</Text>

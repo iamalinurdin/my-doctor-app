@@ -2,13 +2,14 @@ import { SafeAreaView, Text, View } from "react-native";
 import { colors } from "../../utils/colors";
 import { Gap, Header, MenuList, Profile } from "../../components";
 import { IconUserAccount } from "../../assets/icon";
+import { DummyDoctor8 } from "../../assets/dummy";
 
 const HomeProfile = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: colors.white }}>
       <Header title="Profile" handleOnPress={() => navigation.goBack()} />
       <Gap height={10} />
-      <Profile />
+      <Profile name="Jane Doe" description="Product Designer" image={DummyDoctor8} />
       <Gap height={14} />
       <MenuList
         icon="user-account"

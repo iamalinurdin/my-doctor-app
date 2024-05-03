@@ -20,7 +20,7 @@ export default function Login({ navigation }) {
         <Gap height={40} />
         <Button title="Sign In" handleOnPress={() => navigation.replace('MainApp')} />
         <Gap height={30} />
-        <Link title="Create Account" size={16} />
+        <Link title="Create Account" size={16} handleOnPress={() => navigation.replace('Register')} />
       </View>
     </SafeAreaView>
   )

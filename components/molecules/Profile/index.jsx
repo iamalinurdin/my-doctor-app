@@ -3,15 +3,15 @@ import { DummyDoctor1 } from "../../../assets/dummy";
 import { colors } from "../../../utils/colors";
 import { IconRemovePhoto } from "../../../assets/icon";
 
-const Profile = () => {
+const Profile = ({ name, description, image, isRemovePhoto }) => {
   return (
     <View style={styles.container}>
       <View style={styles.frame}>
-        <Image source={DummyDoctor1} style={styles.avatar} />
-        <IconRemovePhoto style={styles.icon} />
+        <Image source={image} style={styles.avatar} />
+        {isRemovePhoto && <IconRemovePhoto style={styles.icon} />}
       </View>
-      <Text style={styles.name}>Jane Doe</Text>
-      <Text style={styles.description}>Mobile Developer</Text>
+      <Text style={styles.name}>{name}</Text>
+      <Text style={styles.description}>{description}</Text>
     </View>
   );
 }

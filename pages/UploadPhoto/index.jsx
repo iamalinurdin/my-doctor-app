@@ -4,7 +4,7 @@ import { IllustrationPhotoNull } from "../../assets/illustration";
 import { IconAddPhoto } from "../../assets/icon";
 import { colors } from "../../utils/colors";
 
-export default function UploadPhoto() {
+export default function UploadPhoto({ navigation }) {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
       <View style={styles.container}>
@@ -22,7 +22,7 @@ export default function UploadPhoto() {
           <View>
             <Button title="Upload and Continue" />
             <Gap height={30} />
-            <Link title="Skip for this" size={16} />
+            <Link title="Skip for this" size={16} handleOnPress={() => navigation.replace('MainApp')} />
           </View>
         </View>
       </View>

@@ -2,13 +2,13 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { DummyUser } from "../../../assets/dummy";
 import { colors } from "../../../utils/colors";
 
-export default function HomeProfile({ handleOnPress }) {
+export default function HomeProfile({ handleOnPress, name, description, image }) {
   return (
     <TouchableOpacity style={styles.container} onPress={handleOnPress}>
-      <Image style={styles.avatar} source={DummyUser} />
+      <Image style={styles.avatar} source={image} />
       <View>
-        <Text style={styles.name}>Shayna Melinda</Text>
-        <Text style={styles.profession}>Product Designer</Text>
+        <Text style={styles.name}>{name}</Text>
+        <Text style={styles.profession}>{description}</Text>
       </View>
     </TouchableOpacity>
   );
