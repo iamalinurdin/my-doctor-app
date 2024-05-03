@@ -6,6 +6,7 @@ import { useForm } from "../../utils";
 import { firebase } from "../../config";
 import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
 import { showMessage } from "react-native-flash-message";
+import { addDoc, collection, getFirestore } from "firebase/firestore";
 
 export default function Register({ navigation }) {
   const [loading, setLoading] = useState(false)
@@ -21,7 +22,14 @@ export default function Register({ navigation }) {
       setLoading(true)
 
       const auth = getAuth(firebase)
-      const response = await createUserWithEmailAndPassword(auth, form.email, form.password)
+      const database = getFirestore()
+
+      await createUserWithEmailAndPassword(auth, form.email, form.password)
+      await addDoc(collection(database, 'users'), {
+        fullname: form.fullname,
+        profession: form.profession,
+        email: form.email,
+      })
 
       setForm('reset')
     } catch (error) {
@@ -32,9 +40,33 @@ export default function Register({ navigation }) {
         backgroundColor: colors.error,
         color: colors.white,
       })
+
+      console.log(errorMessage)
     } finally {
       setLoading(false)
     }
+    // .then((userCredential) => {
+    //   // Signed up 
+    //   const user = userCredential.user;
+
+    //   console.log(user)
+
+    //   setForm('reset')
+    //   // ...
+    // })
+    // .catch((error) => {
+    //   const errorCode = error.code;
+    //   const errorMessage = error.message;
+
+    //   console.log(errorCode, errorMessage)
+
+    //   showMessage({
+    //     message: errorMessage,
+    //     backgroundColor: colors.error,
+    //     color: colors.white,
+    //   })
+    // })
+    // .finally(() => setLoading(false))
   }
 
   return (
