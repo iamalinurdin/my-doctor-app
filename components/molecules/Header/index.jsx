@@ -2,8 +2,13 @@ import { StyleSheet, Text, View } from "react-native";
 import { IconBackDark } from "../../../assets/icon";
 import { Button, Gap } from "../../atoms";
 import { colors } from "../../../utils/colors";
+import DarkProfile from "./DarkProfile";
 
 export default function Header({ handleOnPress, title, type }) {
+  if (type == 'dark-profile') {
+    return <DarkProfile />
+  }
+
   return (
     <View style={styles.container(type)}>
       <Button type="icon-only" icon="back-dark" handleOnPress={handleOnPress} />

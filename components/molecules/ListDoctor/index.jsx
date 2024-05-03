@@ -1,11 +1,11 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { DummyDoctor1, DummyDoctor2 } from "../../../assets/dummy";
 import { colors } from "../../../utils/colors";
 import { IconChevronRight } from "../../../assets/icon";
 
-export default function ListDoctor({ type }) {
+export default function ListDoctor({ type, handleOnPress }) {
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={handleOnPress}>
       <Image style={styles.avatar} source={DummyDoctor2} />
       <View style={styles.profileWrapper}>
         <Text style={styles.name}>Doctor Name</Text>
@@ -14,7 +14,7 @@ export default function ListDoctor({ type }) {
       {type == 'next' && (
         <IconChevronRight />
       )}
-    </View>
+    </TouchableOpacity>
   )
 }
 

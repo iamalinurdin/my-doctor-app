@@ -1,5 +1,5 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { GetStarted, Splash, Register, Login, Doctor, Messages, Hospitals, ChooseDoctor } from '../pages';
+import { GetStarted, Splash, Register, Login, Doctor, Messages, Hospitals, ChooseDoctor, Chat } from '../pages';
 import UploadPhoto from '../pages/UploadPhoto';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { BottomNavigator } from '../components';
@@ -56,6 +56,11 @@ const Router = () => {
       <Stack.Screen
         name="ChooseDoctor"
         component={ChooseDoctor}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Chat"
+        component={Chat}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>
