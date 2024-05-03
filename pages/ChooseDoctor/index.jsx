@@ -1,30 +1,24 @@
-import { SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
-import { Gap, Header, ListDoctor } from "../../components";
+import { SafeAreaView, ScrollView, StyleSheet } from "react-native";
+import { Gap, Header, MenuList } from "../../components";
+import { doctors } from "../../assets/dummy";
 
 const ChooseDoctor = ({ navigation }) => {
   return (
     <SafeAreaView>
-      {/* <View> */}
       <Header title="Pilih Dokter Anak" type="dark" handleOnPress={() => navigation.goBack()} />
-      {/* <Text>Choose Doctor</Text> */}
       <ScrollView showsVerticalScrollIndicator={false}>
-        <ListDoctor type="next" handleOnPress={() => navigation.navigate('Chat')} />
-        <ListDoctor type="next" />
-        <ListDoctor type="next" />
-        <ListDoctor type="next" />
-        <ListDoctor type="next" />
-        <ListDoctor type="next" />
-        <ListDoctor type="next" />
-        <ListDoctor type="next" />
-        <ListDoctor type="next" />
-        <ListDoctor type="next" />
-        <ListDoctor type="next" />
-        <ListDoctor type="next" />
-        <ListDoctor type="next" />
-        <ListDoctor type="next" />
+        {doctors.map((item, index) => (
+          <MenuList
+            image={item.image}
+            text={item.name}
+            description={item.sex}
+            type="next"
+            handleOnPress={() => navigation.navigate('Chat')}
+            key={index}
+          />
+        ))}
         <Gap height={75} />
       </ScrollView>
-      {/* </View> */}
     </SafeAreaView>
   );
 }

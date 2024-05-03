@@ -2,10 +2,10 @@ import { SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
 import { ChatItem, Gap, Header, InputChat } from "../../components";
 import { colors } from "../../utils/colors";
 
-const Chat = () => {
+const Chat = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: colors.white }}>
-      <Header title="John Doe" type="dark-profile" />
+      <Header title="John Doe" type="dark-profile" handleOnPress={() => navigation.goBack()} />
       <ScrollView style={styles.chats}>
         <Gap height={20} />
         <ChatItem isMe={true} />

@@ -12,6 +12,10 @@ import IconStar from './ic-star.svg'
 import IconChevronRight from './ic-chevron-right.svg'
 import IconSend from './ic-send.svg'
 import IconSendDisabled from './ic-send-disabled.svg'
+import IconUserAccount from './ic-user-account.svg'
+import IconTranslate from './ic-translate.svg'
+import IconDescription from './ic-description.svg'
+import IconStarOutline from './ic-star-outlined.svg'
 
 export {
   IconBackDark,
@@ -28,4 +32,8 @@ export {
   IconBackLight,
   IconSend,
   IconSendDisabled,
+  IconUserAccount,
+  IconTranslate,
+  IconDescription,
+  IconStarOutline
 }

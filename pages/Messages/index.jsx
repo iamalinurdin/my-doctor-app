@@ -1,15 +1,23 @@
 import { SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
-import { ListDoctor } from "../../components";
+import { ListDoctor, MenuList } from "../../components";
 import { colors } from "../../utils/colors";
+import { chats } from "../../assets/dummy";
 
-export default function Messages() {
+export default function Messages({ navigation }) {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: colors.secondary }} >
       <View style={styles.container}>
         <Text style={styles.title}>Messages</Text>
-        <ListDoctor />
-        <ListDoctor />
-        <ListDoctor />
+        {chats.map((item, index) => (
+          <MenuList
+            handleOnPress={() => navigation.navigate('Chat')}
+            image={item.image}
+            text={item.name}
+            description={item.message}
+            key={index}
+            boldDescription={!item.is_read}
+          />
+        ))}
       </View>
     </SafeAreaView>
   );

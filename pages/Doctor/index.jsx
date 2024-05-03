@@ -9,7 +9,7 @@ export default function Doctor({ navigation }) {
         <ScrollView showsVerticalScrollIndicator={false}>
           <View style={styles.wrapperContent}>
             <Gap height={30} />
-            <HomeProfile />
+            <HomeProfile handleOnPress={() => navigation.navigate('HomeProfile')} />
             <Text style={styles.sectionLabel}>Mau konsultasi dengan siapa hari ini?</Text>
           </View>
           <View style={{ marginHorizontal: -16 }}>
